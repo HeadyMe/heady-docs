@@ -19,6 +19,15 @@
 | [Architecture](./sources/05-heady-architecture-and-patterns.md) | Six-layer stack and design patterns |
 | [Patent Portfolio](./patents/README.md) | Full patent index with filing details |
 
+### Architecture Deep-Dives
+
+| Section | Description |
+| --- | --- |
+| [Production Architecture](./architecture/production-architecture.md) | End-to-end system map and operator navigation guide |
+| [Site & Domain Registry](./architecture/site-domain-registry.md) | Canonical registry of all 12 domains, routing, and CORS |
+| [Auth Contract](./architecture/auth-contract.md) | Cross-site auth model — API keys, OAuth PKCE, HMAC webhooks |
+| [Colab Control Plane](./architecture/colab-control-plane.md) | 3-runtime GPU cluster, latent-space ops, task dispatch |
+
 ---
 
 ## 🔗 Connected Sources
