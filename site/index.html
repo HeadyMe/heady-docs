@@ -21,15 +21,40 @@
             <span class="nav-logo">🐝</span>
             <span class="nav-title">Heady<span class="accent">Docs</span></span>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
         <div class="nav-links">
             <a href="#overview">Overview</a>
             <a href="#patents">Patents</a>
             <a href="#architecture">Architecture</a>
             <a href="#services">Services</a>
             <a href="#repos">Repos</a>
-            <a href="https://github.com/HeadyMe/heady-docs" target="_blank">GitHub ↗</a>
+            <a href="https://github.com/HeadyMe/heady-docs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
     </nav>
+    <script>
+        (function() {
+            var toggle = document.querySelector('.nav-toggle');
+            var links = document.querySelector('.nav-links');
+            toggle.addEventListener('click', function() {
+                var expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!expanded));
+                links.classList.toggle('open');
+                toggle.classList.toggle('open');
+            });
+            // Close menu when a nav link is clicked
+            links.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    links.classList.remove('open');
+                    toggle.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+    </script>
 
     <header class="hero">
         <div class="hero-badge">DOCUMENTATION HUB</div>
@@ -215,13 +240,13 @@
                     <tbody>
                         <tr>
                             <td><a
-                                    href="https://github.com/HeadyMe/Heady-pre-production-9f2f0642">Heady-pre-production</a>
+                                    href="https://github.com/HeadyMe/Heady-pre-production-9f2f0642" target="_blank" rel="noopener noreferrer">Heady-pre-production</a>
                             </td>
                             <td>Official monorepo — single source of truth</td>
                             <td class="badge pub">Public</td>
                         </tr>
                         <tr>
-                            <td><a href="https://github.com/HeadyMe/heady-docs">heady-docs</a></td>
+                            <td><a href="https://github.com/HeadyMe/heady-docs" target="_blank" rel="noopener noreferrer">heady-docs</a></td>
                             <td>Documentation hub (this repo)</td>
                             <td class="badge pub">Public</td>
                         </tr>

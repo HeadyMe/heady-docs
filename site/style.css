@@ -409,14 +409,72 @@ tr.arena td {
     font-size: 13px;
 }
 
+/* ══════ Hamburger Toggle ══════ */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 110;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all var(--transition);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* ══════ Responsive ══════ */
 @media (max-width: 768px) {
     .nav {
         padding: 12px 20px;
     }
 
+    .nav-toggle {
+        display: flex;
+    }
+
     .nav-links {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10, 10, 18, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        z-index: 105;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        color: var(--text);
     }
 
     .hero {
