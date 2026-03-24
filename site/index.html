@@ -23,9 +23,11 @@
         </div>
         <div class="nav-links">
             <a href="#overview">Overview</a>
+            <a href="#getting-started">Getting Started</a>
             <a href="#patents">Patents</a>
             <a href="#architecture">Architecture</a>
             <a href="#services">Services</a>
+            <a href="#auth">Auth</a>
             <a href="#repos">Repos</a>
             <a href="https://github.com/HeadyMe/heady-docs" target="_blank">GitHub ↗</a>
         </div>
@@ -47,36 +49,72 @@
         <section id="overview" class="section">
             <h2>📋 Documentation Index</h2>
             <div class="card-grid">
-                <a href="../sources/01-heady-executive-overview.md" class="card">
+                <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/00-comprehensive-source.md" class="card">
+                    <div class="card-icon">📖</div>
+                    <h3>Comprehensive Source</h3>
+                    <p>Full platform deep-dive — architecture, services, IP, and deployment (v3.1)</p>
+                </a>
+                <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/01-heady-executive-overview.md" class="card">
                     <div class="card-icon">🎯</div>
                     <h3>Executive Overview</h3>
                     <p>Platform vision, core philosophy, market position, and ecosystem overview</p>
                 </a>
-                <a href="../sources/02-heady-apex-trading-intelligence.md" class="card">
+                <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/02-heady-apex-trading-intelligence.md" class="card">
                     <div class="card-icon">📈</div>
                     <h3>Trading Intelligence</h3>
                     <p>APEX autonomous trading system with ternary risk architecture</p>
                 </a>
-                <a href="../sources/03-heady-ip-portfolio-and-valuation.md" class="card">
+                <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/03-heady-ip-portfolio-and-valuation.md" class="card">
                     <div class="card-icon">🛡️</div>
                     <h3>IP Portfolio</h3>
                     <p>51+ patents, strategic valuation ($4.87M), and filing timeline</p>
                 </a>
-                <a href="../sources/04-heady-service-catalog-and-capabilities.md" class="card">
+                <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/04-heady-service-catalog-and-capabilities.md" class="card">
                     <div class="card-icon">⚙️</div>
                     <h3>Service Catalog</h3>
                     <p>30+ MCP tools across Chat, Dev, Research, Memory, Creative, Ops, QA</p>
                 </a>
-                <a href="../sources/05-heady-architecture-and-patterns.md" class="card">
+                <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/05-heady-architecture-and-patterns.md" class="card">
                     <div class="card-icon">🏗️</div>
                     <h3>Architecture</h3>
                     <p>Six-layer stack, 24+ design patterns, security philosophy</p>
                 </a>
-                <a href="../patents/README.md" class="card">
+                <a href="https://github.com/HeadyMe/heady-docs/blob/main/patents/README.md" class="card">
                     <div class="card-icon">📜</div>
                     <h3>Patent Portfolio</h3>
                     <p>Complete filing index with USPTO application numbers and claims</p>
                 </a>
+                <a href="https://github.com/HeadyMe/heady-docs/blob/main/strategic/value-assessment-2026-q1.md" class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Strategic Value Assessment</h3>
+                    <p>Q1 2026 valuation model, IP inventory, and growth projections</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="getting-started" class="section">
+            <h2>🚀 Getting Started</h2>
+            <div class="card-grid">
+                <div class="card mini">
+                    <div class="card-icon">1️⃣</div>
+                    <h3>Read the Overview</h3>
+                    <p>Start with the <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/01-heady-executive-overview.md">Executive Overview</a> to understand the platform vision and architecture.</p>
+                </div>
+                <div class="card mini">
+                    <div class="card-icon">2️⃣</div>
+                    <h3>Explore the Architecture</h3>
+                    <p>Review the <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/05-heady-architecture-and-patterns.md">six-layer stack</a> and design patterns powering the Latent OS.</p>
+                </div>
+                <div class="card mini">
+                    <div class="card-icon">3️⃣</div>
+                    <h3>Browse MCP Services</h3>
+                    <p>Discover the <a href="https://github.com/HeadyMe/heady-docs/blob/main/sources/04-heady-service-catalog-and-capabilities.md">30+ MCP tools</a> across 7 domains.</p>
+                </div>
+                <div class="card mini">
+                    <div class="card-icon">4️⃣</div>
+                    <h3>Clone the Monorepo</h3>
+                    <p>Get the code from <a href="https://github.com/HeadyMe/Heady-pre-production-9f2f0642">Heady-pre-production</a> and follow the setup instructions.</p>
+                </div>
             </div>
         </section>
 
@@ -315,6 +353,43 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </section>
+        <section id="auth" class="section">
+            <h2>🔐 Authentication & Security Model</h2>
+            <div class="card-grid">
+                <div class="card mini">
+                    <div class="card-icon">🔑</div>
+                    <h3>API Gateway Auth</h3>
+                    <p>All API requests authenticate via <code>HEADY_API_KEY</code> at the Gateway layer (Layer 2). Admin operations require <code>ADMIN_TOKEN</code>.</p>
+                </div>
+                <div class="card mini">
+                    <div class="card-icon">🛡️</div>
+                    <h3>mTLS & Edge Security</h3>
+                    <p>Cloudflare Edge Workers handle SSL termination, DDoS protection, and rate limiting before traffic reaches the Gateway.</p>
+                </div>
+                <div class="card mini">
+                    <div class="card-icon">🔒</div>
+                    <h3>Service-to-Service</h3>
+                    <p>Internal services use scoped tokens with least-privilege access. All secrets managed via environment variables — never hardcoded.</p>
+                </div>
+                <div class="card mini">
+                    <div class="card-icon">📋</div>
+                    <h3>Vector-Native Security</h3>
+                    <p>Patent HS-062 covers geometric threat detection directly in embedding space. See <a href="https://github.com/HeadyMe/heady-docs/blob/main/patents/HS-062-vector-native-security.md">patent filing</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="deployment" class="section">
+            <h2>🚢 Deployment Architecture</h2>
+            <div class="arch-layers">
+                <div class="layer layer-1"><span class="layer-num">CDN</span> Cloudflare Edge Workers — 12 domains, dynamic delivery, DNS</div>
+                <div class="layer layer-2"><span class="layer-num">API</span> Google Cloud Run — heady-manager, serverless MCP bridge</div>
+                <div class="layer layer-3"><span class="layer-num">DB</span> Neon Postgres (Scale) — pgvector, 5 tables, 19 indexes</div>
+                <div class="layer layer-4"><span class="layer-num">VEC</span> Pinecone — Distributed vector storage for embeddings</div>
+                <div class="layer layer-5"><span class="layer-num">GPU</span> 3-Node Colab Pro+ Cluster — Overmind, Forge, Edge</div>
+                <div class="layer layer-6"><span class="layer-num">OPS</span> Sentry + 1Password — Error tracking, secret management</div>
             </div>
         </section>
     </main>
