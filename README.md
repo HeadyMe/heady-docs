@@ -31,6 +31,15 @@
 | [API & Services Reference](./api/api-keys-reference.md) | Service inventory and environment setup |
 | [Strategic Value Assessment](./strategic/value-assessment-2026-q1.md) | Q1 2026 valuation and growth projections |
 
+### Architecture Deep-Dives
+
+| Section | Description |
+| --- | --- |
+| [Production Architecture](./architecture/production-architecture.md) | End-to-end system map and operator navigation guide |
+| [Site & Domain Registry](./architecture/site-domain-registry.md) | Canonical registry of all 12 domains, routing, and CORS |
+| [Auth Contract](./architecture/auth-contract.md) | Cross-site auth model — API keys, OAuth PKCE, HMAC webhooks |
+| [Colab Control Plane](./architecture/colab-control-plane.md) | 3-runtime GPU cluster, latent-space ops, task dispatch |
+
 ---
 
 ## Architecture at a Glance
